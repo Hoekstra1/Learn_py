@@ -1,0 +1,39 @@
+import math # uses math.ceil for rounding
+
+# define base value for items
+sqft_per_gallon = 400
+
+def get_cost(sqft_walls, sqft_ceiling, sqft_per_gallon, cost_per_gallon):
+    total_gallons = math.ceil((sqft_walls + sqft_ceiling) / sqft_per_gallon)
+    cost = total_gallons * cost_per_gallon
+    return cost, total_gallons
+
+# user inputs
+sqft_walls = float(input("Enter the sqft of the walls: "))
+sqft_ceiling = float(input("Enter the sqft of the ceiling: "))
+cost_per_gallon = float(input("Enter the cost of a gallon of paint: "))
+cats = int(input("Enter how many cats you have: "))
+
+# you better have some cats, otherwise find a new program
+if cats < 1:
+    print("You should really get some cats...")
+    exit()
+elif cats > 1:
+    print("I bet your cats are super cute! :3")
+
+# calculate painting cost
+painting_cost, total_gallons = get_cost(sqft_walls, sqft_ceiling, sqft_per_gallon, cost_per_gallon)
+
+# check if user buys overpriced paint
+overpriced_paint = (
+    "Stop buying the overpriced shit... spend it on your cats instead..."
+    if cost_per_gallon > 29
+    else ""
+) 
+
+# output
+print(
+    f"If you want to paint a room with {sqft_walls + sqft_ceiling} sqft, at a price per gallon of ${cost_per_gallon}," 
+    f"it would cost ${painting_cost} for {total_gallons} gallons of paint. {overpriced_paint}\n\n"
+    f"""<[:3 wizard cat"""
+)
