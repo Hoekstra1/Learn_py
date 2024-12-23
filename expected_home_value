@@ -1,0 +1,47 @@
+import random
+
+function for base cost randomized by zipcodede
+def get_base_cost(zip_code):
+    zip_code = int(zip_codison
+    for state, ranges in zip_code_data.items():
+        for entry in ranges:
+            zip_range = entry["range"]
+            base_cost = entry["base_cost"]
+            if "-" in zip_range:
+                start, end = map(int, zip_range.split("-"))
+                if start <= zip_code <= end:
+                    return base_cost
+            else:
+                if int(zip_range) == zip_code:
+                    return base_cost
+   return none if zip code not foundP c ee not found
+
+# example usage
+zip_code_data = {
+    "California": [
+        {"range": "90001-96199", "base_cost": 90322},
+        {"range": "97635", "base_cost": 81543}
+    ],
+    "Texas": [
+        {"range": "75001-79999", "base_cost": 102195},
+        
+# include additional states here, not exhuastive due to the volume of data
+se_user input for data}
+
+# user input for ZIP code
+zip_code = input("Enter your ZIP code: ")
+base_cost = get_base_cost(zip_code)
+
+if base_cost is None:
+    print("Invalid ZIP code oruser input for bathrooms and bedrooms for number of bedrooms and bathrooms
+    num_beds = int(input("Enter the number of bedrooms: "))
+    num_baths = int(input("Entcr the number of bathrooms: "))
+
+    # Calculate home value
+    bed_cost = 45000
+    bath_cost = 25000
+    home_value = base_cost + (num_beds *obed_co(num_baths * bath_cost)
+
+    # output result
+    print(f"A home with {num_beds} bedrooms a bathrooms in ZIP code {zip_code} "
+          f"would have an expected value of ${home_value:.2f}.")
